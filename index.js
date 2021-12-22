@@ -10,18 +10,34 @@ class Formatter {
 
   static titleize(str){
     let arr = str.split(" ")
-    let newArr =[]
+    let newArr = []
     console.log(arr)
-    arr.map(x => {
-      if (x==='the'||'a'||'an' || 'but' || 'of' || 'and' || 'for' || 'at' || 'by' || 'from'){
-        newArr.push(x)
-      }
+
+    arr.forEach(word => {
+      if (word === 'the'|| word === 'a'|| word === 'an' || word=== 'but' || word==='of' || word ==='and' || word === 'for' || word === 'at' || word ==='by' || word ==='from'){
+        newArr.push(word)
+          }
       else {
-        newArr.push(Formatter.capitalize(x))
+        newArr.push(Formatter.capitalize(word))
       }
-      let g = newArr.join(" ")
-      let finarr = Formatter.capitalize(g)
-      return finarr
     })
+    
+    return Formatter.capitalize(newArr.join(" "))
   }
 }
+    // arr.map(x => {
+    //   if (x ==='the'||'a'||'an' || 'but' || 'of' || 'and' || 'for' || 'at' || 'by' || 'from'){
+    //     
+    //   }
+    //   else {
+    //     
+    //   }
+      // let g = newArr.join(" ")
+      // let finarr = Formatter.capitalize(g)
+      // console.log(finarr) 
+//     })
+//   }
+// }
+
+console.log(Formatter.capitalize('fat'))
+Formatter.titleize('a fat fucking asshole') 
